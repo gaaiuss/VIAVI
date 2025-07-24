@@ -13,7 +13,7 @@ if not resultsDir.exists():
     resultsDir.mkdir(exist_ok=True)
 
 # Substituir pelo IP do ONA-800
-host = "10.55.8.156"
+host = "10.55.8.158"
 # host = "192.168.0.207"
 
 # A porta é sempre 5600
@@ -237,7 +237,7 @@ def escreveArquivo(teste, cf, resultadoParcial):
     tempDict = {k: v for k, v in zip(parametros, resultadoParcial)}
 
     if resultsFile.exists():
-        with open(resultsFile, "a", newline="", encoding="utf-8") as file:
+        with open(resultsFile, "r", newline="", encoding="utf-8") as file:
             writer = csv.writer(file)
             for key, value in tempDict.items():
                 writer.writerow([key, cf, value])
