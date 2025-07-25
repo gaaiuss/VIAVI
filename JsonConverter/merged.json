@@ -1,0 +1,578 @@
+[
+    {
+        "cdmVersion": "2.2",
+        "tests": [
+            {
+                "description": "ONT Detection Test",
+                "label": "ONT Detection Test",
+                "schemaVersion": "1.0.0",
+                "type": "ontdetection",
+                "configuration": {
+                    "signalSetup": "gpon",
+                    "gpon": {
+                        "oltIdFormat": "ascii",
+                        "ontSerialNumberFormat": "4ascii-4hex"
+                    }
+                },
+                "results": {
+                    "status": "none",
+                    "testTime": "2025-07-25T08:51:05-03:00",
+                    "data": {
+                        "gpon": {
+                            "ontId": 65,
+                            "ontSerialNumber": [
+                                77,
+                                83,
+                                84,
+                                67,
+                                255,
+                                240,
+                                71,
+                                105
+                            ],
+                            "signalStatus": "ok",
+                            "ontStatus": "activated"
+                        }
+                    }
+                },
+                "testLocations": [
+                    {
+                        "label": "CTO_01_P01",
+                        "testPlanIndex": 2
+                    }
+                ]
+            }
+        ],
+        "assetInfo": {
+            "assetType": "OLP-39V2",
+            "model": "OLP-39X",
+            "uniqueId": "2336-02-XX-0019",
+            "serialNo": "2336-02-XX-0019",
+            "calibrationDate": "2022-03-14",
+            "swVersion": "03.03.03",
+            "hwVersion": "2336-7001.923R01, Rev.003, D51",
+            "techId": "",
+            "swOptions": [
+                {
+                    "name": "ONT Detection",
+                    "optionLicenseType": "perm"
+                }
+            ]
+        },
+        "workflow": {
+            "workOrderId": "test 07_25",
+            "date": "2025-07-24T18:19:36.446Z",
+            "type": "viaviJob",
+            "techInfo": {
+                "techId": "",
+                "firstName": "",
+                "lastName": ""
+            }
+        },
+        "checkSum": "dd20dfba3f0d019e63c69e6ff2fc57bc"
+    },
+    {
+        "cdmVersion": "2.2",
+        "tests": [
+            {
+                "description": "ONT Detection Test",
+                "label": "ONT Detection Test",
+                "schemaVersion": "1.0.0",
+                "type": "ontdetection",
+                "configuration": {
+                    "signalSetup": "gpon",
+                    "gpon": {
+                        "oltIdFormat": "ascii",
+                        "ontSerialNumberFormat": "4ascii-4hex"
+                    }
+                },
+                "results": {
+                    "status": "none",
+                    "testTime": "2025-07-25T08:52:17-03:00",
+                    "data": {
+                        "gpon": {
+                            "ontId": 66,
+                            "ontSerialNumber": [
+                                77,
+                                83,
+                                84,
+                                67,
+                                255,
+                                240,
+                                71,
+                                105
+                            ],
+                            "signalStatus": "ok",
+                            "ontStatus": "activated"
+                        }
+                    }
+                },
+                "testLocations": [
+                    {
+                        "label": "CTO_01_P02",
+                        "testPlanIndex": 3
+                    }
+                ]
+            }
+        ],
+        "assetInfo": {
+            "assetType": "OLP-39V2",
+            "model": "OLP-39X",
+            "uniqueId": "2336-02-XX-0019",
+            "serialNo": "2336-02-XX-0019",
+            "calibrationDate": "2022-03-14",
+            "swVersion": "03.03.03",
+            "hwVersion": "2336-7001.923R01, Rev.003, D51",
+            "techId": "",
+            "swOptions": [
+                {
+                    "name": "ONT Detection",
+                    "optionLicenseType": "perm"
+                }
+            ]
+        },
+        "workflow": {
+            "workOrderId": "test 07_25",
+            "date": "2025-07-24T18:19:36.446Z",
+            "type": "viaviJob",
+            "techInfo": {
+                "techId": "",
+                "firstName": "",
+                "lastName": ""
+            }
+        },
+        "checkSum": "d2a01cd2d3f4c6223deb99a766e68983"
+    },
+    {
+        "cdmVersion": "2.2",
+        "tests": [
+            {
+                "description": "ONT Detection Test",
+                "label": "ONT Detection Test",
+                "schemaVersion": "1.0.0",
+                "type": "ontdetection",
+                "configuration": {
+                    "signalSetup": "gpon",
+                    "gpon": {
+                        "oltIdFormat": "ascii",
+                        "ontSerialNumberFormat": "4ascii-4hex"
+                    }
+                },
+                "results": {
+                    "status": "none",
+                    "testTime": "2025-07-25T08:53:32-03:00",
+                    "data": {
+                        "gpon": {
+                            "ontId": 67,
+                            "ontSerialNumber": [
+                                77,
+                                83,
+                                84,
+                                67,
+                                255,
+                                240,
+                                71,
+                                105
+                            ],
+                            "signalStatus": "ok",
+                            "ontStatus": "activated"
+                        }
+                    }
+                },
+                "testLocations": [
+                    {
+                        "label": "CTO_01_P03",
+                        "testPlanIndex": 4
+                    }
+                ]
+            }
+        ],
+        "assetInfo": {
+            "assetType": "OLP-39V2",
+            "model": "OLP-39X",
+            "uniqueId": "2336-02-XX-0019",
+            "serialNo": "2336-02-XX-0019",
+            "calibrationDate": "2022-03-14",
+            "swVersion": "03.03.03",
+            "hwVersion": "2336-7001.923R01, Rev.003, D51",
+            "techId": "",
+            "swOptions": [
+                {
+                    "name": "ONT Detection",
+                    "optionLicenseType": "perm"
+                }
+            ]
+        },
+        "workflow": {
+            "workOrderId": "test 07_25",
+            "date": "2025-07-24T18:19:36.446Z",
+            "type": "viaviJob",
+            "techInfo": {
+                "techId": "",
+                "firstName": "",
+                "lastName": ""
+            }
+        },
+        "checkSum": "eb81e1302a36ddfd93bf3e149132b229"
+    },
+    {
+        "cdmVersion": "2.2",
+        "tests": [
+            {
+                "description": "ONT Detection Test",
+                "label": "ONT Detection Test",
+                "schemaVersion": "1.0.0",
+                "type": "ontdetection",
+                "configuration": {
+                    "signalSetup": "gpon",
+                    "gpon": {
+                        "oltIdFormat": "ascii",
+                        "ontSerialNumberFormat": "4ascii-4hex"
+                    }
+                },
+                "results": {
+                    "status": "none",
+                    "testTime": "2025-07-25T08:54:44-03:00",
+                    "data": {
+                        "gpon": {
+                            "ontId": 68,
+                            "ontSerialNumber": [
+                                77,
+                                83,
+                                84,
+                                67,
+                                255,
+                                240,
+                                71,
+                                105
+                            ],
+                            "signalStatus": "ok",
+                            "ontStatus": "activated"
+                        }
+                    }
+                },
+                "testLocations": [
+                    {
+                        "label": "CTO_01_P04",
+                        "testPlanIndex": 5
+                    }
+                ]
+            }
+        ],
+        "assetInfo": {
+            "assetType": "OLP-39V2",
+            "model": "OLP-39X",
+            "uniqueId": "2336-02-XX-0019",
+            "serialNo": "2336-02-XX-0019",
+            "calibrationDate": "2022-03-14",
+            "swVersion": "03.03.03",
+            "hwVersion": "2336-7001.923R01, Rev.003, D51",
+            "techId": "",
+            "swOptions": [
+                {
+                    "name": "ONT Detection",
+                    "optionLicenseType": "perm"
+                }
+            ]
+        },
+        "workflow": {
+            "workOrderId": "test 07_25",
+            "date": "2025-07-24T18:19:36.446Z",
+            "type": "viaviJob",
+            "techInfo": {
+                "techId": "",
+                "firstName": "",
+                "lastName": ""
+            }
+        },
+        "checkSum": "acc8854417d8d34720cc8465a35742ba"
+    },
+    {
+        "cdmVersion": "2.2",
+        "tests": [
+            {
+                "description": "ONT Detection Test",
+                "label": "ONT Detection Test",
+                "schemaVersion": "1.0.0",
+                "type": "ontdetection",
+                "configuration": {
+                    "signalSetup": "gpon",
+                    "gpon": {
+                        "oltIdFormat": "ascii",
+                        "ontSerialNumberFormat": "4ascii-4hex"
+                    }
+                },
+                "results": {
+                    "status": "none",
+                    "testTime": "2025-07-25T08:55:57-03:00",
+                    "data": {
+                        "gpon": {
+                            "ontId": 69,
+                            "ontSerialNumber": [
+                                77,
+                                83,
+                                84,
+                                67,
+                                255,
+                                240,
+                                71,
+                                105
+                            ],
+                            "signalStatus": "ok",
+                            "ontStatus": "activated"
+                        }
+                    }
+                },
+                "testLocations": [
+                    {
+                        "label": "CTO_01_P05",
+                        "testPlanIndex": 6
+                    }
+                ]
+            }
+        ],
+        "assetInfo": {
+            "assetType": "OLP-39V2",
+            "model": "OLP-39X",
+            "uniqueId": "2336-02-XX-0019",
+            "serialNo": "2336-02-XX-0019",
+            "calibrationDate": "2022-03-14",
+            "swVersion": "03.03.03",
+            "hwVersion": "2336-7001.923R01, Rev.003, D51",
+            "techId": "",
+            "swOptions": [
+                {
+                    "name": "ONT Detection",
+                    "optionLicenseType": "perm"
+                }
+            ]
+        },
+        "workflow": {
+            "workOrderId": "test 07_25",
+            "date": "2025-07-24T18:19:36.446Z",
+            "type": "viaviJob",
+            "techInfo": {
+                "techId": "",
+                "firstName": "",
+                "lastName": ""
+            }
+        },
+        "checkSum": "2909678439b634cebc75b46f30e60087"
+    },
+    {
+        "cdmVersion": "2.2",
+        "tests": [
+            {
+                "description": "ONT Detection Test",
+                "label": "ONT Detection Test",
+                "schemaVersion": "1.0.0",
+                "type": "ontdetection",
+                "configuration": {
+                    "signalSetup": "gpon",
+                    "gpon": {
+                        "oltIdFormat": "ascii",
+                        "ontSerialNumberFormat": "4ascii-4hex"
+                    }
+                },
+                "results": {
+                    "status": "none",
+                    "testTime": "2025-07-25T08:57:43-03:00",
+                    "data": {
+                        "gpon": {
+                            "ontId": 70,
+                            "ontSerialNumber": [
+                                77,
+                                83,
+                                84,
+                                67,
+                                255,
+                                240,
+                                71,
+                                105
+                            ],
+                            "signalStatus": "ok",
+                            "ontStatus": "activated"
+                        }
+                    }
+                },
+                "testLocations": [
+                    {
+                        "label": "CTO_01_P06",
+                        "testPlanIndex": 7
+                    }
+                ]
+            }
+        ],
+        "assetInfo": {
+            "assetType": "OLP-39V2",
+            "model": "OLP-39X",
+            "uniqueId": "2336-02-XX-0019",
+            "serialNo": "2336-02-XX-0019",
+            "calibrationDate": "2022-03-14",
+            "swVersion": "03.03.03",
+            "hwVersion": "2336-7001.923R01, Rev.003, D51",
+            "techId": "",
+            "swOptions": [
+                {
+                    "name": "ONT Detection",
+                    "optionLicenseType": "perm"
+                }
+            ]
+        },
+        "workflow": {
+            "workOrderId": "test 07_25",
+            "date": "2025-07-24T18:19:36.446Z",
+            "type": "viaviJob",
+            "techInfo": {
+                "techId": "",
+                "firstName": "",
+                "lastName": ""
+            }
+        },
+        "checkSum": "0e46cc0b73892d2d08586c3052a86fd8"
+    },
+    {
+        "cdmVersion": "2.2",
+        "tests": [
+            {
+                "description": "ONT Detection Test",
+                "label": "ONT Detection Test",
+                "schemaVersion": "1.0.0",
+                "type": "ontdetection",
+                "configuration": {
+                    "signalSetup": "gpon",
+                    "gpon": {
+                        "oltIdFormat": "ascii",
+                        "ontSerialNumberFormat": "4ascii-4hex"
+                    }
+                },
+                "results": {
+                    "status": "none",
+                    "testTime": "2025-07-25T08:59:18-03:00",
+                    "data": {
+                        "gpon": {
+                            "ontId": 71,
+                            "ontSerialNumber": [
+                                77,
+                                83,
+                                84,
+                                67,
+                                255,
+                                240,
+                                71,
+                                105
+                            ],
+                            "signalStatus": "ok",
+                            "ontStatus": "activated"
+                        }
+                    }
+                },
+                "testLocations": [
+                    {
+                        "label": "CTO_01_P07",
+                        "testPlanIndex": 8
+                    }
+                ]
+            }
+        ],
+        "assetInfo": {
+            "assetType": "OLP-39V2",
+            "model": "OLP-39X",
+            "uniqueId": "2336-02-XX-0019",
+            "serialNo": "2336-02-XX-0019",
+            "calibrationDate": "2022-03-14",
+            "swVersion": "03.03.03",
+            "hwVersion": "2336-7001.923R01, Rev.003, D51",
+            "techId": "",
+            "swOptions": [
+                {
+                    "name": "ONT Detection",
+                    "optionLicenseType": "perm"
+                }
+            ]
+        },
+        "workflow": {
+            "workOrderId": "test 07_25",
+            "date": "2025-07-24T18:19:36.446Z",
+            "type": "viaviJob",
+            "techInfo": {
+                "techId": "",
+                "firstName": "",
+                "lastName": ""
+            }
+        },
+        "checkSum": "f4c5694881e0244dd0d45c3d43c2b6d6"
+    },
+    {
+        "cdmVersion": "2.2",
+        "tests": [
+            {
+                "description": "ONT Detection Test",
+                "label": "ONT Detection Test",
+                "schemaVersion": "1.0.0",
+                "type": "ontdetection",
+                "configuration": {
+                    "signalSetup": "gpon",
+                    "gpon": {
+                        "oltIdFormat": "ascii",
+                        "ontSerialNumberFormat": "4ascii-4hex"
+                    }
+                },
+                "results": {
+                    "status": "none",
+                    "testTime": "2025-07-25T09:00:34-03:00",
+                    "data": {
+                        "gpon": {
+                            "ontId": 73,
+                            "ontSerialNumber": [
+                                77,
+                                83,
+                                84,
+                                67,
+                                255,
+                                240,
+                                71,
+                                105
+                            ],
+                            "signalStatus": "ok",
+                            "ontStatus": "activated"
+                        }
+                    }
+                },
+                "testLocations": [
+                    {
+                        "label": "CTO_01_P08",
+                        "testPlanIndex": 9
+                    }
+                ]
+            }
+        ],
+        "assetInfo": {
+            "assetType": "OLP-39V2",
+            "model": "OLP-39X",
+            "uniqueId": "2336-02-XX-0019",
+            "serialNo": "2336-02-XX-0019",
+            "calibrationDate": "2022-03-14",
+            "swVersion": "03.03.03",
+            "hwVersion": "2336-7001.923R01, Rev.003, D51",
+            "techId": "",
+            "swOptions": [
+                {
+                    "name": "ONT Detection",
+                    "optionLicenseType": "perm"
+                }
+            ]
+        },
+        "workflow": {
+            "workOrderId": "test 07_25",
+            "date": "2025-07-24T18:19:36.446Z",
+            "type": "viaviJob",
+            "techInfo": {
+                "techId": "",
+                "firstName": "",
+                "lastName": ""
+            }
+        },
+        "checkSum": "ef7266f7723965256a93aecfd62672f8"
+    }
+]
