@@ -8,14 +8,14 @@ This Python tool merges multiple `.json` files into a single file, flattens nest
 
 JsonConverter/
 ├── config/
-│ ├── config.csv # CSV column order definition
-│ └── merged.json # (auto-generated) Merged JSON
+│   ├── config.csv         # CSV column order definition
+│   └── merged.json        # (auto-generated) Merged JSON
 ├── resource/
-│ └── *.json # Input JSON files
+│   └── *.json             # Input JSON files
 ├── output/
-│ └── output.csv # (auto-generated) Final CSV output
-├── app.py # Main execution script
-└── README.md # Project documentation
+│   └── output.csv         # (auto-generated) Final CSV output
+├── app.py                 # Main execution script
+└── README.md              # Project documentation
 
 
 ---
