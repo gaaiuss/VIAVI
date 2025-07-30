@@ -8,7 +8,18 @@ the data to a `.csv` file using a configurable column order.
 
 ## 📁 Project Structure
 
-<pre> JsonConverter/ ├── config/ │ ├── config.csv # CSV column order definition │ └── merged.json # (auto-generated) Merged JSON ├── resource/ │ └── *.json # Input JSON files ├── output/ │ └── output.csv # (auto-generated) Final CSV output ├── app.py # Main execution script └── README.md # Project documentation </pre>
+<pre> 
+JsonConverter/
+├── config/
+│   ├── config.csv         # CSV column order definition
+│   └── merged.json        # (auto-generated) Merged JSON
+├── resource/
+│   └── *.json             # Input JSON files
+├── output/
+│   └── output.csv         # (auto-generated) Final CSV output
+├── app.py                 # Main execution script
+└── README.md              # Project documentation
+ </pre>
 
 
 ---
