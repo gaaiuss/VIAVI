@@ -1,9 +1,15 @@
-import json
 import csv
-from pathlib import Path
+import json
+from typing import TYPE_CHECKING
+
+from config.variables import (CSV_CONFIG_FILE, CSV_OUTPUT_FILE,
+                              JSON_OUTPUT_FILE, RESOURCE_DIR)
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
-def merge_json_files(resource_dir: Path, output_file: Path) -> None:
+def merge_json_files(resource_dir: 'Path', output_file: 'Path') -> None:
     """
     Merge multiple JSON files from a directory into a single JSON file.
 
@@ -114,7 +120,7 @@ def format_serial_number(json_list: list[dict]) -> list[dict]:
     return fmt_json
 
 
-def load_column_order(csv_config: Path) -> list[str]:
+def load_column_order(csv_config: 'Path') -> list[str]:
     """
     Load the desired CSV column order from a configuration CSV file.
 
@@ -135,7 +141,9 @@ def load_column_order(csv_config: Path) -> list[str]:
         )]
 
 
-def write_csv(csv_path: Path, csv_config: Path, resource: list[dict]) -> None:
+def write_csv(
+        csv_path: 'Path', csv_config: 'Path', resource: list[dict]
+) -> None:
     """
     Write a list of dictionaries to a CSV file using a specified column order.
 
@@ -160,18 +168,10 @@ def write_csv(csv_path: Path, csv_config: Path, resource: list[dict]) -> None:
 
 
 if __name__ == "__main__":
-    base_dir = Path(__file__).parent
-    resource_dir = base_dir / "resource"
-    result_dir = base_dir / "output"
-    config_dir = base_dir / "config"
-    output_json = config_dir / "merged.json"
-    csv_config = config_dir / "config.csv"
-    output_csv = result_dir / "output.csv"
+    merge_json_files(RESOURCE_DIR, JSON_OUTPUT_FILE)
 
-    merge_json_files(resource_dir, output_json)
-
-    with open(output_json, 'r') as f:
+    with open(JSON_OUTPUT_FILE, 'r') as f:
         json_list = json.load(f)
         fmt_json = format_serial_number(json_list)
         resource = flatten_json_list(fmt_json)
-        write_csv(output_csv, csv_config, resource)
+        write_csv(CSV_OUTPUT_FILE, CSV_CONFIG_FILE, resource)
