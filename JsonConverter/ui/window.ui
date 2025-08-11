@@ -88,9 +88,6 @@
       </item>
      </layout>
     </item>
-    <item>
-     <layout class="QGridLayout" name="gridLayout_3"/>
-    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">

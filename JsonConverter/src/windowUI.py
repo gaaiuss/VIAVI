@@ -31,8 +31,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
+        self.gridLayout.setContentsMargins(0, -1, -1, -1)
         self.labelStandard = QLabel(self.centralwidget)
         self.labelStandard.setObjectName(u"labelStandard")
+        self.labelStandard.setMaximumSize(QSize(16777215, 100))
         font = QFont()
         font.setPointSize(20)
         self.labelStandard.setFont(font)
@@ -43,23 +45,32 @@ class Ui_MainWindow(object):
         self.gridLayout_2 = QGridLayout()
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setHorizontalSpacing(150)
-        self.pushButton = QPushButton(self.centralwidget)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(0, 100))
-        self.pushButton.setMaximumSize(QSize(100, 16777215))
-
-        self.gridLayout_2.addWidget(self.pushButton, 0, 0, 1, 1)
-
         self.pushButton_2 = QPushButton(self.centralwidget)
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.pushButton_2.setMinimumSize(QSize(0, 100))
-        self.pushButton_2.setMaximumSize(QSize(100, 16777215))
+        self.pushButton_2.setMaximumSize(QSize(200, 16777215))
 
-        self.gridLayout_2.addWidget(self.pushButton_2, 0, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.pushButton_2, 1, 0, 1, 1)
+
+        self.pushButton = QPushButton(self.centralwidget)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setMinimumSize(QSize(0, 100))
+        self.pushButton.setMaximumSize(QSize(200, 16777215))
+
+        self.gridLayout_2.addWidget(self.pushButton, 0, 0, 1, 1)
 
         self.gridLayout.addLayout(self.gridLayout_2, 1, 0, 1, 1)
 
         self.horizontalLayout.addLayout(self.gridLayout)
+
+        self.gridLayout_3 = QGridLayout()
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.label = QLabel(self.centralwidget)
+        self.label.setObjectName(u"label")
+
+        self.gridLayout_3.addWidget(self.label, 0, 0, 1, 1)
+
+        self.horizontalLayout.addLayout(self.gridLayout_3)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -80,8 +91,10 @@ class Ui_MainWindow(object):
             "MainWindow", u"MainWindow", None))
         self.labelStandard.setText(QCoreApplication.translate(
             "MainWindow", u"VIAVI Report Generator", None))
-        self.pushButton.setText(QCoreApplication.translate(
-            "MainWindow", u"Select json files", None))
         self.pushButton_2.setText(QCoreApplication.translate(
             "MainWindow", u"Convert to csv", None))
+        self.pushButton.setText(QCoreApplication.translate(
+            "MainWindow", u"Select json files", None))
+        self.label.setText(QCoreApplication.translate(
+            "MainWindow", u"EXAMPLE", None))
     # retranslateUi
