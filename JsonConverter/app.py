@@ -1,27 +1,20 @@
-# import json
 import sys
 
-# from PySide6.QtGui import QIcon
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication
 
-from gui.buttons import ButtonsGrid
-from gui.info import Info
-from gui.mainWindow import MainWindow
+from src.mainWindow import MainWindow
+from src.variables import ICON_PATH
 
-if __name__ == "__main__":
-    # Create app
+if __name__ == '__main__':
+    # App creation
     app = QApplication(sys.argv)
-    window = MainWindow()
+    mainWindow = MainWindow()
 
-    # Info
-    info = Info('Select json files to convert to csv')
-    window.addToLayout(info)
+    # Icon
+    icon = icon = QIcon(str(ICON_PATH))
+    app.setWindowIcon(icon)
 
-    # Grid
-    buttonsGrid = ButtonsGrid()
-    window.vLayout.addLayout(buttonsGrid)
-
-    # Execute everything
-    window.adjustFixedSize()
-    window.show()
+    # App execution
+    mainWindow.show()
     app.exec()
