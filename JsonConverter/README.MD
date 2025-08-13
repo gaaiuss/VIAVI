@@ -1,48 +1,42 @@
-# 🧩 JSON to CSV Converter
+# JSON to CSV Converter
 
-This Python tool merges multiple `.json` files into a single file, 
+This Python application merges multiple `.json` files into a single file, 
 flattens nested data, formats GPON serial numbers, and exports 
 the data to a `.csv` file using a configurable column order.
 
 ---
 
-## 📁 Project Structure
+## Latest Release
 
-<pre> 
-JsonConverter/
-├── config/
-│   ├── config.csv         # CSV column order definition
-│   └── merged.json        # (auto-generated) Merged JSON
-├── resource/
-│   └── *.json             # Input JSON files
-├── output/
-│   └── output.csv         # (auto-generated) Final CSV output
-├── app.py                 # Main execution script
-└── README.md              # Project documentation
- </pre>
-
+[Realese](https://github.com/gaaiuss/VIAVI/releases/tag/v1.0.0)
 
 ---
 
-## 🚀 Features
+## Download
 
-- 🔁 **Merge JSON files** from a directory
-- 🔧 **Format GPON serial numbers** (4 ASCII + 4 HEX)
-- 📐 **Flatten nested JSON** using dot notation
-- 🧾 **Write CSV with ordered columns** based on config
+[Direct download of the latest version](https://github.com/gaaiuss/VIAVI/releases/download/v1.0.0/VIAVI.OLP-39.Report.Generator.exe)
 
 ---
 
-## 🔧 Requirements
+## Features
+
+- **Merge JSON files** from selected existing files
+- **Format GPON serial numbers** (4 ASCII + 4 HEX)
+- **Flatten nested JSON** using dot notation
+- **Write CSV with ordered columns** based on a config csv file
+
+---
+
+## Requirements
 
 - Python **3.10+**
 - All the modules required are detailed in `requirements.txt`
 
 ---
 
-## ⚙️ Column Configuration
+## Column Configuration
 
-Your `config/config.csv` should define the column order for the output CSV:
+Your `resource/config.csv` should define the column order for the output CSV:
 
 ```csv
 column,order
