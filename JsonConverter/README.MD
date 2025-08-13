@@ -36,7 +36,7 @@ JsonConverter/
 ## 🔧 Requirements
 
 - Python **3.10+**
-- Only uses the **standard library**
+- All the modules required are detailed in `requirements.txt`
 
 ---
 
