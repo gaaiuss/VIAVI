@@ -1,12 +1,8 @@
-import json
-
 from PySide6.QtGui import QIcon, QPixmap
 from PySide6.QtWidgets import QFileDialog, QMainWindow
 
-from src.converter import (flatten_json_list, format_serial_number,
-                           merge_json_files, write_csv)
-from src.variables import (CSV_CONFIG_FILE, ICON_PATH, JSON_OUTPUT_FILE,
-                           LABEL_ICON_PATH)
+from src.converter import mergeJsonFiles, openReport, saveToExcel, writeCsv
+from src.variables import ICON_PATH, LABEL_ICON_PATH
 from src.windowUI import Ui_MainWindow
 
 
@@ -19,7 +15,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Buttons functionalities
         self.selectedFiles = []
         self.selectButton.clicked.connect(self.selectFileDialog)
-        self.convertButton.clicked.connect(self.convertSelectedFiles)
+        self.convertButton.clicked.connect(self.generateReport)
 
         # Icon
         icon = QIcon(str(ICON_PATH))
@@ -28,38 +24,40 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Label Logo
         self.setLabelLogo()
 
-    def getSelectedFiles(self):
-        return self.selected_files
-
-    def showSavedLocalPath(self):
-        pass
-
     def setLabelLogo(self):
         self.labelLogo.setPixmap(QPixmap(str(LABEL_ICON_PATH)))
 
     def selectFileDialog(self):
-        file_dialog = QFileDialog(self)
-        file_dialog.setWindowTitle("Select Files")
-        file_dialog.setFileMode(QFileDialog.FileMode.ExistingFiles)
-        file_dialog.setViewMode(QFileDialog.ViewMode.Detail)
+        fileDialog = QFileDialog(self)
+        fileDialog.setNameFilter("Json (*.json)")
+        fileDialog.setWindowTitle("Select Files")
+        fileDialog.setFileMode(QFileDialog.FileMode.ExistingFiles)
+        fileDialog.setViewMode(QFileDialog.ViewMode.Detail)
 
-        if file_dialog.exec():
-            selected_files = file_dialog.selectedFiles()
-            self.selected_files = selected_files
+        if fileDialog.exec():
+            selectedFiles = fileDialog.selectedFiles()
+            self.selectedFiles = selectedFiles
             self.selectedFilesLabel.setText(
-                f'{len(selected_files)} files selected')
+                f'{len(selectedFiles)} files selected')
 
-    def convertSelectedFiles(self):
-        merge_json_files(self.selected_files, JSON_OUTPUT_FILE)
-        with open(JSON_OUTPUT_FILE, 'r') as f:
-            json_list = json.load(f)
-            fmt_json = format_serial_number(json_list)
-            resource = flatten_json_list(fmt_json)
-            csv_output_file = self.saveFile()
-            write_csv(csv_output_file, CSV_CONFIG_FILE, resource)
+    def generateReport(self):
+        # Merge selected files
+        resource = mergeJsonFiles(self.selectedFiles)
 
-    def saveFile(self):
-        file_path, _ = QFileDialog.getSaveFileName(
-            self, "Save File", "", "CSV Files (*.csv);;All Files (*)")
-        self.savedReportPath.setText(f'Report saved in "{file_path}"')
-        return file_path
+        # Write CSV
+        writeCsv(resource)
+
+        # Report save location
+        savePath = self.getSavePath()
+
+        # Generate excel file
+        excelPath = saveToExcel(savePath)
+        self.savedReportPath.setText(f'Report saved in "{excelPath}"')
+
+        # Oper saved report
+        openReport(excelPath)
+
+    def getSavePath(self):
+        filePath, _ = QFileDialog.getSaveFileName(
+            self, "Save File", "", "Excel (*.xlsx);;All Files (*)")
+        return filePath
