@@ -20,6 +20,7 @@ the data to a `.csv` file using a configurable column order.
 
 ## Features
 
+- **PySide6** GUI
 - **Merge JSON files** from selected existing files
 - **Format GPON serial numbers** (4 ASCII + 4 HEX)
 - **Flatten nested JSON** using dot notation
@@ -31,6 +32,16 @@ the data to a `.csv` file using a configurable column order.
 
 - Python **3.10+**
 - All the modules required are detailed in `requirements.txt`
+
+---
+
+## PySide Qt Designer Setup
+
+- generate the .ui file
+    pyside6-uic ui_file_path -o ui_py_file_path
+
+- Generate exe (PyInstaller)
+    pyinstaller --name="VIAVI_OLP-39_Report_Generator_Windows" --noconfirm --onefile --add-data='output/;output/' --add-data='resource/;resource/' --icon='resource/icon.png' --noconsole --clean --log-level=WARN app.py
 
 ---
 
