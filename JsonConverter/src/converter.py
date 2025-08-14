@@ -1,70 +1,82 @@
 import csv
 import json
+import os
 from pathlib import Path
 
+import pandas as pd
 
-def merge_json_files(json_files: list[str], output_file: 'Path') -> None:
-    merged_data = []
+from src.variables import CSV_CONFIG_FILE, CSV_OUTPUT_FILE, JSON_OUTPUT_FILE
 
-    for file_path in json_files:
-        path_obj = Path(file_path)
-        with open(path_obj, 'r', encoding='utf8') as f:
+
+def mergeJsonFiles(jsonFiles: list[str]):
+    mergedData = []
+
+    for filePath in jsonFiles:
+        pathObj = Path(filePath)
+        with open(pathObj, 'r', encoding='utf-8') as f:
             data = json.load(f)
             if isinstance(data, list):
-                merged_data.extend(data)
+                mergedData.extend(data)
             else:
-                merged_data.append(data)
+                mergedData.append(data)
 
-    with open(output_file, 'w', encoding='utf8') as f:
-        json.dump(merged_data, f)
+    with open(JSON_OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        json.dump(mergedData, f)
+
+    with open(JSON_OUTPUT_FILE, 'r', encoding='utf-8') as f:
+        jsonList = json.load(f)
+        formtJson = fmtSerialNumber(jsonList)
+        resource = flatJsonList(formtJson)
+
+    return resource
 
 
-def flatten_json_list(json_list: list[dict]) -> list[dict]:
-    def flatten(obj, parent_key='', result=None):
+def flatJsonList(jsonList: list[dict]) -> list[dict]:
+    def flatten(obj, parentKey='', result=None):
         if result is None:
             result = {}
         if isinstance(obj, dict):
             for k, v in obj.items():
-                full_key = f"{parent_key}.{k}" if parent_key else k
-                flatten(v, full_key, result)
+                fullKey = f"{parentKey}.{k}" if parentKey else k
+                flatten(v, fullKey, result)
         elif isinstance(obj, list) and all(
             isinstance(i, (dict, list)) for i in obj
         ):
             for idx, item in enumerate(obj):
-                flatten(item, parent_key, result)
+                flatten(item, parentKey, result)
         else:
-            result[parent_key] = obj
+            result[parentKey] = obj
         return result
 
-    flattened_list = []
-    for item in json_list:
+    flatList = []
+    for item in jsonList:
         flat = flatten(item)
-        flattened_list.append(flat)
-    return flattened_list
+        flatList.append(flat)
+    return flatList
 
 
-def format_4ascii_4hex(serial: list[int]) -> str:
-    ascii_part = ''.join(chr(b) for b in serial[:4])
-    hex_part = ''.join(f'{b:02X}' for b in serial[4:])
-    return f"{ascii_part}-{hex_part}"
+def fmt4ascii4hex(serial: list[int]) -> str:
+    asciiPart = ''.join(chr(b) for b in serial[:4])
+    hexPart = ''.join(f'{b:02X}' for b in serial[4:])
+    return f"{asciiPart}-{hexPart}"
 
 
-def format_serial_number(json_list: list[dict]) -> list[dict]:
-    fmt_json = []
-    for json_obj in json_list:
-        for test in json_obj.get("tests", []):
-            serial_path = test.get("results", {}).get(
+def fmtSerialNumber(jsonList: list[dict]) -> list[dict]:
+    fmtJson = []
+    for jsonObj in jsonList:
+        for test in jsonObj.get("tests", []):
+            serialPath = test.get("results", {}).get(
                 "data", {}).get("gpon", {})
-            if isinstance(serial_path.get("ontSerialNumber"), list):
-                serial_number = serial_path["ontSerialNumber"]
-                formatted_serial = format_4ascii_4hex(serial_number)
-                serial_path["ontSerialNumber"] = formatted_serial
-        fmt_json.append(json_obj)
-    return fmt_json
+            if isinstance(serialPath.get("ontSerialNumber"), list):
+                serialNumber = serialPath["ontSerialNumber"]
+                fmtSerial = fmt4ascii4hex(serialNumber)
+                serialPath["ontSerialNumber"] = fmtSerial
+        fmtJson.append(jsonObj)
+    return fmtJson
 
 
-def load_column_order(csv_config: Path) -> list[str]:
-    with open(csv_config, newline='', encoding='utf-8') as f:
+def loadColumnOrder(csvConfig: Path) -> list[str]:
+    with open(csvConfig, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         return [row['column'] for row in sorted(
             reader,
@@ -72,13 +84,24 @@ def load_column_order(csv_config: Path) -> list[str]:
         )]
 
 
-def write_csv(csv_path: Path, csv_config: Path, resource: list[dict]) -> None:
-    column_order = load_column_order(csv_config)
+def writeCsv(resource: list[dict]):
+    columnOrder = loadColumnOrder(CSV_CONFIG_FILE)
 
-    with open(csv_path, 'w', newline='', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=column_order)
+    with open(CSV_OUTPUT_FILE, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.DictWriter(f, fieldnames=columnOrder)
         writer.writeheader()
 
         for row in resource:
-            ordered_row = {col: row.get(col, '') for col in column_order}
-            writer.writerow(ordered_row)
+            orderedRow = {col: row.get(col, '') for col in columnOrder}
+            writer.writerow(orderedRow)
+
+
+def saveToExcel(outputPath: str):
+    dataFrame = pd.read_csv(CSV_OUTPUT_FILE, encoding='latin-1')
+    excelPath = outputPath.partition('.')[0] + '.xlsx'
+    dataFrame.to_excel(excelPath, index=False)
+    return excelPath
+
+
+def openReport(filePath):
+    os.startfile(filePath)
