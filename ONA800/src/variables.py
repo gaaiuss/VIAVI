@@ -1,5 +1,29 @@
+import os
+from datetime import datetime
+from pathlib import Path
+
+from dotenv import load_dotenv
+
+# Directories
+ROOT_DIR = Path(__file__).parent.parent
+OUTPUT_DIR = ROOT_DIR / "output"
+Path.mkdir(OUTPUT_DIR, exist_ok=True)  # Make output dir if it not exists
+
+# Result file
+_now = datetime.now()
+_file_name = _now.strftime("%Y-%m-%d-%H-%M.txt")
+OUTPUT_FILE = OUTPUT_DIR / _file_name
+
+# HOST
+load_dotenv()
+HOST = os.getenv('HOST')  # ONA-800 IP
+
 # Port
 PORT = 5600
+
+# Lista de frequencias a serem testadas
+# CENTER_FREQUENCY = [1812.6, 1870, 2135, 2160]
+CENTER_FREQUENCY = [1812.6, 1842.5, 1870, 2160]
 
 # Definição dos testes a serem realizados
 # cf é a frequencia central da banda a ser testada
@@ -147,7 +171,3 @@ PARAMETERS = {
         "RS EVM Peak %", "RS EVM Symbol"
     ]
 }
-
-# Lista de frequencias a serem testadas
-# CENTER_FREQUENCY = [1812.6, 1870, 2135, 2160]
-CENTER_FREQUENCY = [1812.6, 1842.5, 1870, 2160]
