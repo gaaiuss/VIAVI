@@ -1,5 +1,8 @@
+import os
 from datetime import datetime
 from pathlib import Path
+
+from dotenv import load_dotenv
 
 # Directories
 ROOT_DIR = Path(__file__).parent.parent
@@ -12,7 +15,8 @@ _file_name = _now.strftime("%Y-%m-%d-%H-%M.txt")
 OUTPUT_FILE = OUTPUT_DIR / _file_name
 
 # HOST
-HOST = ''  # ONA-800 IP
+load_dotenv()
+HOST = os.getenv('HOST')  # ONA-800 IP
 
 # Port
 PORT = 5600
