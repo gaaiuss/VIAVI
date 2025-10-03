@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from src.variables import CSV_CONFIG_FILE, CSV_OUTPUT_FILE, JSON_OUTPUT_FILE
+from variables import CSV_CONFIG_FILE, CSV_OUTPUT_FILE, JSON_OUTPUT_FILE
 
 
 def mergeJsonFiles(jsonFiles: list[str]):
