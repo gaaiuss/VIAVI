@@ -89,4 +89,4 @@ def main(page: ft.Page):
     page.add(logo, text_container, btn_row, selected_files, save_dir)
 
 
-ft.app(main, assets_dir='assets', upload_dir='src/uploads')
+ft.app(main, assets_dir='assets')
