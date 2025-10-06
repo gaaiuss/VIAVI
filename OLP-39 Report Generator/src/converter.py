@@ -98,7 +98,8 @@ def writeCsv(resource: list[dict]):
 
 def saveToExcel(outputPath: str):
     dataFrame = pd.read_csv(CSV_OUTPUT_FILE, encoding='latin-1')
-    excelPath = outputPath.partition('.')[0] + '.xlsx'
+    time_now = pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')
+    excelPath = outputPath + f'\\OLP39_Report_{time_now}.xlsx'
     dataFrame.to_excel(excelPath, index=False)
     return excelPath
 
