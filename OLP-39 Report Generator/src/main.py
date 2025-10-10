@@ -33,9 +33,9 @@ def main(page: ft.Page):
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
     # Text Variables
-    main_text = ft.Text("OLP-39 Report Generator", size=25)
-    select_btn_text = ft.Text("Select Json Files")
-    generate_btn_text = ft.Text('Generate Report')
+    main_text = ft.Text("OLP-39 Report Generator", size=20)
+    select_btn_text = ft.Text("Select Json Files", size=10)
+    generate_btn_text = ft.Text('Generate Report', size=10)
 
     # Json
     pick_files_dialog = ft.FilePicker(on_result=select_json)
@@ -60,14 +60,14 @@ def main(page: ft.Page):
     select_btn = ft.CupertinoButton(
         content=select_btn_text,
         color=ft.Colors.WHITE,
-        bgcolor=ft.Colors.DEEP_PURPLE_400,
+        bgcolor=ft.Colors.PURPLE_800,
         on_click=lambda _: pick_files_dialog.pick_files(allow_multiple=True),
     )
 
     generate_btn = ft.CupertinoButton(
         content=generate_btn_text,
         color=ft.Colors.WHITE,
-        bgcolor=ft.Colors.DEEP_PURPLE_400,
+        bgcolor=ft.Colors.PURPLE_800,
         on_click=lambda _: generate_report_dialog.get_directory_path(),
     )
 
@@ -80,7 +80,7 @@ def main(page: ft.Page):
     logo_path = 'logo.png'
     logo = ft.Image(
         src=logo_path,
-        width=400,
+        width=250,
         height=100,
         fit=ft.ImageFit.CONTAIN,
     )
