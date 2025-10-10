@@ -40,12 +40,12 @@ def main(page: ft.Page):
     # Json
     pick_files_dialog = ft.FilePicker(on_result=select_json)
     page.overlay.append(pick_files_dialog)
-    selected_files = ft.Text(text_align=ft.TextAlign.CENTER)
+    selected_files = ft.Text(text_align=ft.TextAlign.CENTER, size=10)
 
     # Generate Report
     generate_report_dialog = ft.FilePicker(on_result=generate_report)
     page.overlay.append(generate_report_dialog)
-    save_dir = ft.Text(text_align=ft.TextAlign.CENTER)
+    save_dir = ft.Text(text_align=ft.TextAlign.CENTER, size=10)
 
     # Text Container
     text_container = ft.Container(
